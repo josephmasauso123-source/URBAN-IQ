@@ -1,0 +1,1757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Urban IQ | Shop at the Comfort of Your Home</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #ff7900;
+    color: #222;
+    line-height: 1.6;
+}
+
+header {
+    background:#ff6A00;
+    padding: 12px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 8px #ddd;
+}
+
+.logo {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px;
+}
+
+nav a:hover {
+    color: #ff7900;
+}
+
+.hero {
+    background: linear-gradient(120deg, #ff7900, #ffad42);
+    color: white;
+    text-align: center;
+    padding: 75px 15px;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+.hero button {
+    background: white;
+    color: #ff7900;
+    border: none;
+    padding: 14px 25px;
+    margin-top: 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+section {
+    padding: 45px 5%;
+}
+
+.section-title {
+    text-align: center;
+    color: #ff7900;
+    margin-bottom: 25px;
+    font-size: 27px;
+}
+
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.category-buttons button {
+    background: #ff0900;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.category-buttons button.active {
+    background: #222;
+}
+
+.search-box {
+    max-width: 550px;
+    margin: 0 auto 30px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ff7900;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 12px #eee;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    font-size: 14px;
+}
+
+.price {
+    color: #ff7900;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 12px 0;
+}
+
+.card button {
+    width: 100%;
+    background: #ff7900;
+    color: white;
+    padding: 11px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+.card a {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    color: #ff7900;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.badge {
+    display: inline-block;
+    background: #fff0df;
+    color: #d96500;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.cart-section {
+    background: #fff3e8;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 35px;
+}
+
+.cart-item {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.remove-btn {
+    background: #d93025;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+}
+
+.checkout-btn {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    border-radius: 7px;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.cart-link {
+    color: #ff7900;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.info-box {
+    background: #fff7f0;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.info-box h3 {
+    color: #ff7900;
+    margin-bottom: 10px;
+}
+
+.info-box ul {
+    padding-left: 20px;
+}
+
+.contact-button {
+    display: inline-block;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 13px 20px;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+footer a {
+    color: #ffad42;
+    text-decoration: none;
+}
+
+@media(max-width:600px) {
+    header {
+        justify-content: center;
+        text-align: center;
+    }
+
+    nav {
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .logo {
+        width: 160px;
+        height: 110px;
+    }
+
+    section {
+        padding: 35px 4%;
+    }
+}
+  .logo {
+    width: 190px;
+    height: 140px;
+    object-fit: contain;
+    display: block;
+    margin: 5px auto;
+  }
+  .floating-whatsapp {
+    position: fixed;
+    right: 18px;
+    bottom: 20px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #25D366;
+    color: white;
+    padding: 13px 20px;
+    border-radius: 50px;
+
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+
+.floating-whatsapp img {
+    width: 27px;
+    height: 27px;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.05);
+}
+  /* REPAIR SERVICES */
+
+#repair-services {
+    padding: 40px 15px;
+    background: #fff;
+    text-align: center;
+}
+
+#repair-services h2 {
+    color: #f58220;
+    margin-bottom: 15px;
+}
+
+.repair-intro {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.repair-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.repair-card {
+    background: #fff7ef;
+    border: 2px solid #f58220;
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+}
+
+.repair-card span {
+    display: inline-block;
+    background: #f58220;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.booking-box {
+    max-width: 500px;
+    margin: 35px auto;
+    padding: 20px;
+    background: #fff7ef;
+    border-radius: 15px;
+    text-align: left;
+}
+
+.booking-box label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.booking-box input,
+.booking-box select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 7px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+
+#repairPrice {
+    margin-top: 18px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f58220;
+    text-align: center;
+}
+
+.free-install {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+}
+
+.booking-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    background: #f58220;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+       }
+  /* BACK TO TOP BUTTON */
+
+#backToTop {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: #f58220;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+    z-index: 9998;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  }
+  .store-name {
+    font-size: 36px;
+    font-weight: 900;
+    text-align: center;
+    color: white;
+    letter-spacing: 2px;
+    margin: 15px 0;
+    text-transform: uppercase;
+}
+  @media (max-width: 480px) {
+    .store-name {
+        font-size: 27px;
+        letter-spacing: 1px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <h1 class="store-name">URBAN IQ STORES</h1>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#cart">🛒 Cart</a>
+        <a href="#repair-services">Repair Services 🔧</a>
+    </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+
+    <h1>WELCOME TO URBAN IQ</h1>
+
+    <p>SHOP AT THE COMFORT OF YOUR HOME</p>
+
+    <p>Discover quality gadgets at affordable prices.</p>
+  
+
+    <button onclick="document.getElementById('shop').scrollIntoView()">
+        SHOP NOW
+    </button>
+
+</div>
+
+
+<!-- SHOP -->
+
+<section id="shop">
+
+    <h2 class="section-title">OUR PRODUCTS</h2>
+
+    <div class="category-buttons">
+
+        <button onclick="showProducts('new',this)" class="active">
+            Brand New
+        </button>
+
+        <button onclick="showProducts('used',this)">
+            Pre-Owned
+        </button>
+
+        <button onclick="showProducts('starlink',this)">
+    StarLink
+        </button>
+
+        <button onclick="showProducts('accessories',this)">
+            Accessories
+        </button>
+
+        <button onclick="showProducts('laptops',this)">
+            Laptops 💻
+        </button>
+
+    </div>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search for a product..."
+            oninput="filterProducts()"
+        >
+
+    </div>
+
+    <h2 class="section-title" id="category-title">
+        Brand New iPhones
+    </h2>
+
+    <div class="products" id="product-list"></div>
+
+</section>
+
+
+<!-- FEATURED -->
+
+<section>
+
+    <h2 class="section-title">FEATURED PRODUCTS ⭐</h2>
+
+    <div class="products" id="featured-products"></div>
+
+</section>
+
+
+<!-- CART -->
+
+<section id="cart">
+
+    <div class="cart-section">
+
+        <h2 class="section-title">🛒 YOUR SHOPPING CART</h2>
+
+        <div id="cart-items">
+            <p>Your shopping cart is currently empty.</p>
+        </div>
+
+        <h3 id="cart-total">Total: K0</h3>
+
+        <h3 style="margin-top:20px;">Customer Details</h3>
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Your full name"
+            style="width:100%;padding:13px;margin-top:10px;"
+        >
+
+        <input
+            type="tel"
+            id="customerPhone"
+            placeholder="Your phone number"
+            style="width:100%;padding:13px;margin-top:10px;"
+        >
+
+        <h3 style="margin-top:20px;">Delivery Option</h3>
+
+        <select
+            id="deliveryOption"
+            onchange="toggleDelivery()"
+            style="width:100%;padding:13px;margin-top:10px;"
+        >
+            <option value="Collection">Collect from the shop</option>
+            <option value="Delivery">Delivery (additional fee)</option>
+        </select>
+
+        <input
+            type="text"
+            id="deliveryTown"
+            placeholder="Enter your town/destination"
+            style="width:100%;padding:13px;margin-top:10px;display:none;"
+        >
+
+        <button class="checkout-btn" onclick="checkout()">
+            CHECKOUT ON WHATSAPP
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- DELIVERY -->
+
+<section id="delivery">
+
+    <h2 class="section-title">DELIVERY INFORMATION</h2>
+
+    <div class="info-box">
+
+        <h3>Delivery Across Zambia</h3>
+
+        <p>
+            Urban IQ offers deliveries to selected destinations
+            at an additional delivery fee.
+        </p>
+
+        <p style="margin-top:12px;">
+            Available destinations include:
+        </p>
+
+        <ul>
+            <li>Mongu</li>
+            <li>Kabwe</li>
+            <li>Ndola</li>
+            <li>Kapiri</li>
+            <li>Kitwe</li>
+            <li>Chingola</li>
+            <li>Chipata</li>
+            <li>Luanshya</li>
+            <li>Kalulushi</li>
+            <li>Serenje</li>
+            <li>Mkushi</li>
+            <li>Kasama</li>
+            <li>Mansa</li>
+            <li>Kaoma</li>
+            <li>Solwezi</li>
+            <li>Kalumbila</li>
+            <li>Chililabombwe</li>
+        </ul>
+
+        <p style="margin-top:15px;">
+            Please contact us on WhatsApp to confirm delivery
+            availability and charges.
+        </p>
+
+    </div>
+  <!-- REPAIR SERVICES -->
+
+<section id="repair-services">
+
+    <h2>iPhone Repair Services</h2>
+
+    <p class="repair-intro">
+        Professional iPhone screen and battery replacement.
+        FREE INSTALLATION!
+    </p>
+
+    <div class="repair-container">
+
+        <div class="repair-card">
+            <h3>📱 Screen Replacement</h3>
+            <p>Replace your damaged iPhone screen.</p>
+            <span>FREE INSTALLATION</span>
+        </div>
+
+        <div class="repair-card">
+            <h3>🔋 Battery Replacement</h3>
+            <p>Give your iPhone battery a new life.</p>
+            <span>FREE INSTALLATION</span>
+        </div>
+
+    </div>
+
+    <div class="booking-box">
+
+        <h2>Book a Replacement</h2>
+
+        <form id="repairBookingForm">
+
+            <label>Your Name</label>
+            <input type="text" id="repairName"
+                   placeholder="Enter your name" required>
+
+            <label>Phone Number</label>
+            <input type="tel" id="repairPhone"
+                   placeholder="Enter your phone number" required>
+
+            <label>Replacement Service</label>
+            <select id="repairType" required>
+                <option value="">Choose service</option>
+                <option value="screen">Screen Replacement</option>
+                <option value="battery">Battery Replacement</option>
+            </select>
+
+            <label>iPhone Model</label>
+            <select id="repairModel" required>
+                <option value="">Choose iPhone model</option>
+            </select>
+
+            <div id="repairPrice">
+                Select a service and model to see the price.
+            </div>
+
+            <p class="free-install">
+                🎁 FREE INSTALLATION INCLUDED
+            </p>
+
+            <label>Preferred Booking Date</label>
+            <input type="date" id="repairDate" required>
+
+            <button type="submit" class="booking-button">
+                Book Replacement on WhatsApp
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">ABOUT URBAN IQ</h2>
+
+    <div class="info-box">
+
+        <p>
+            Welcome to Urban IQ, your destination for smartphones,
+            laptops and accessories.
+        </p>
+
+        <p style="margin-top:12px;">
+            Our goal is to make shopping convenient by allowing
+            customers to explore available products and place
+            their orders from the comfort of their homes.
+        </p>
+
+        <h3 style="margin-top:20px;">Our Location</h3>
+
+        <p>
+           First Capital Bank along Cairo road
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- RETURNS -->
+
+<section id="returns">
+
+    <h2 class="section-title">RETURNS & REFUNDS POLICY</h2>
+
+    <div class="info-box">
+
+        <ol style="padding-left:20px;">
+
+            <li>
+                Products must be returned within 3 days of purchase.
+            </li>
+
+            <li>
+                Gadgets must be unused and in their original,
+                unopened packaging.
+            </li>
+
+            <li>
+                Approved refunds will be processed to the original
+                payment method within 14 business days.
+            </li>
+
+            <li>
+                A 10% restocking fee will be deducted from the refund.
+            </li>
+
+            <li>
+                Warranty claims are handled separately and do not
+                affect the right to return under this policy.
+            </li>
+
+            <li>
+                Personalised or customised gadgets are non-refundable.
+            </li>
+
+            <li>
+                A valid receipt or proof of purchase is required.
+            </li>
+
+        </ol>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <h2 class="section-title">CONTACT URBAN IQ</h2>
+
+    <div class="info-box">
+
+        <h3>WhatsApp</h3>
+
+        <p>+260 974 752 378</p>
+
+        <h3 style="margin-top:15px;">Physical Location</h3>
+
+        <p> First Capital Bank along Cairo road. </p>
+
+        <h3 style="margin-top:15px;">Opening Hours</h3>
+
+        <p>Monday: 9:00 AM - 6:00 PM</p>
+        <p>Tuesday: 9:00 AM - 6:00 PM</p>
+        <p>Wednesday: 9:00 AM - 6:00 PM</p>
+        <p>Thursday: 9:00 AM - 6:00 PM</p>
+        <p>Friday: 9:00 AM - 6:00 PM</p>
+        <p>Saturday: Closed</p>
+        <p>Sunday: 9:00 AM - 6:00 PM</p>
+
+        <a
+            href="https://wa.me/260974752378"
+            class="contact-button"
+            target="_blank"
+        >
+            CHAT WITH US ON WHATSAPP
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <h3>URBAN IQ</h3>
+
+    <p>SHOP AT THE COMFORT OF YOUR HOME</p>
+
+    <p style="margin-top:15px;">
+        © 2026 Urban IQ. All Rights Reserved.
+    </p>
+
+    <p style="margin-top:10px;">
+        Website developed by Nexora Digital.
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =================================
+   PRODUCT CATALOGUE
+================================= */
+
+
+/* BRAND NEW IPHONES */
+
+const newPhones = [
+
+
+["iPhone 8 Plus","64GB","4,300"],
+["iPhone 8 Plus","256GB","4,500"],
+
+["iPhone X","64GB","4,650"],
+["iPhone X","256GB","4,850"],
+
+["iPhone XR","128GB","5,400"],
+["iPhone XR","64GB","5,150"],
+["iPhone XR Max","256GB","5,850"],
+
+["iPhone XS Max","64GB","5,550"],
+
+["iPhone 11","64GB","5,700"],
+["iPhone 11","128GB","6,000"],
+
+["iPhone 11 Pro","64GB","7,100"],
+["iPhone 11 Pro","256GB","7,500"],
+
+["iPhone 11 Pro Max","64GB","7,700"],
+["iPhone 11 Pro Max","256GB","8,500"],
+
+["iPhone 12","128GB","7,600"],
+["iPhone 12","64GB","7,300"],
+
+["iPhone 12 Pro","128GB","8,700"],
+["iPhone 12 Pro","256GB","9,200"],
+
+["iPhone 12 Pro Max","128GB","9,900"],
+["iPhone 12 Pro Max","256GB","10,500"],
+
+["iPhone 13","128GB","8,600"],
+["iPhone 13","256GB","9,100"],
+
+["iPhone 13 Pro","128GB","11,500"],
+
+["iPhone 13 Pro Max","128GB","13,000"],
+["iPhone 13 Pro Max","256GB","13,500"],
+
+["iPhone 14","128GB","10,200"],
+["iPhone 14","256GB","10,600"],
+
+["iPhone 14 Plus","128GB","11,700"],
+["iPhone 14 Plus","256GB","12,450"],
+
+["iPhone 14 Pro","128GB","12,600"],
+["iPhone 14 Pro","256GB","13,000"],
+
+["iPhone 14 Pro Max","128GB","14,000"],
+["iPhone 14 Pro Max","256GB","14,900"],
+
+["iPhone 15","128GB","13,000"],
+["iPhone 15","256GB","14,000"],
+
+["iPhone 15 Plus","128GB","14,500"],
+["iPhone 15 Plus","256GB","15,000"],
+
+["iPhone 15 Pro","256GB","17,000"],
+
+["iPhone 15 Pro Max","256GB","18,500","A"],
+
+["iPhone 16","128GB","17,000"],
+["iPhone 16","256GB","17,500"],
+
+["iPhone 16","128GB","18,000","NA"],
+["iPhone 16","256GB","18,500","NA"],
+
+["iPhone 16 Plus","256GB","18,200"],
+["iPhone 16 Plus","256GB","19,600","NA"],
+
+["iPhone 16 Pro","256GB","20,500","A"],
+
+["iPhone 16 Pro Max","256GB","22,800","A"],
+["iPhone 16 Pro Max","256GB","26,500","NA"],
+
+["iPhone 17","256GB","21,500"],
+["iPhone 17 Air","256GB","22,300"],
+["iPhone 17 Pro","256GB","30,500"],
+["iPhone 17 Pro Max","256GB","33,000"],
+["iPhone 17 Pro Max","512GB","37,000"]
+
+
+];
+
+
+/* PRE-OWNED IPHONES */
+
+const usedPhones = [
+
+["iPhone 15 Pro","128GB","28,500"],
+["iPhone 14 Pro Max","256GB","21,500"],
+["iPhone 13 Pro Max","256GB","17,500"],
+["iPhone 14 Plus","256GB","17,000"],
+["iPhone 13 Pro","128GB","14,500"],
+["iPhone 12 Pro Max","128GB","12,800"],
+["iPhone 13","128GB","12,000"],
+["iPhone 11 Pro Max","256GB","8,800"],
+["iPhone 11 Pro Max","64GB","8,000"],
+["iphone 11 pro","256GB","8,000"],
+["iphone 11 pro","64GB","7,500"],
+["iPhone 11","128GB","7,000"],
+["iPhone 11","64GB","6,500"],
+["iPhone XS Max","256GB","5,800"],
+["iPhone XS Max","64GB","5,500"],
+["iPhone XR","128GB","5,500"],
+["iPhone XR","64GB","5,000"]
+
+];
+
+
+/* StarLink
+   
+*/
+
+const StarLink = [
+
+["StarLink","Mini","6,500"],
+
+["StarLink","Standard","9,500"]
+
+];
+
+
+/* ACCESSORIES */
+
+const accessories = [
+
+["AirPods Pro & 3rd Generation","Accessories","250"],
+
+["iPhone X Original Battery","Original Battery","650"],
+
+["Authentic AirPods Pro 2","Authentic","5,500"]
+
+];
+
+
+/* LAPTOPS */
+
+const laptops = [
+
+[
+"Dell Latitude 3189",
+"8GB RAM | 128GB SSD | 12-inch Touchscreen",
+"2,900"
+],
+
+[
+"Dell lle x360",
+"8GB RAM | 128GB SSD | 12-inch Touchscreen",
+"2,900"
+]
+
+];
+
+
+/* =================================
+   WEBSITE FUNCTIONALITY
+================================= */
+
+let currentCategory = "new";
+
+let cart = [];
+
+
+/* CATEGORY NAMES */
+
+const categoryNames = {
+
+new: "Brand New iPhones",
+
+used: "Pre-Owned iPhones",
+
+starlink: "StarLink",
+
+accessories: "Accessories",
+
+laptops: "Laptop Catalogue"
+
+};
+
+
+/* GET PRODUCTS */
+
+function getProducts(category) {
+
+    if(category === "new") return newPhones;
+
+    if(category === "used") return usedPhones;
+
+    if(category === "starlink") return StarLink;
+
+    if(category === "accessories") return accessories;
+
+    if(category === "laptops") return laptops;
+
+    return [];
+
+}
+
+
+/* CHANGE CATEGORY */
+
+function showProducts(category, button) {
+
+    currentCategory = category;
+
+    document.getElementById("category-title").innerText =
+        categoryNames[category];
+
+    document.getElementById("searchInput").value = "";
+
+    document.querySelectorAll(".category-buttons button")
+        .forEach(btn => btn.classList.remove("active"));
+
+    if(button) {
+        button.classList.add("active");
+    }
+
+    filterProducts();
+
+}
+
+
+/* DISPLAY PRODUCTS */
+function filterProducts() {
+
+    const container =
+        document.getElementById("product-list");
+
+    const search =
+        document.getElementById("searchInput")
+        .value.toLowerCase().trim();
+
+    const categories = [
+        "new",
+        "used",
+        "starlink",
+        "accessories",
+        "laptops"
+    ];
+
+    // Search all categories when searching.
+    // Otherwise, display only the selected category.
+    const categoriesToSearch = search
+        ? categories
+        : [currentCategory];
+
+    let filtered = [];
+
+    categoriesToSearch.forEach(category => {
+
+        const products = getProducts(category);
+
+        products.forEach((item, index) => {
+
+            const searchableText =
+                item.join(" ").toLowerCase();
+
+            if(searchableText.includes(search)) {
+
+                filtered.push({
+                    item: item,
+                    index: index,
+                    category: category
+                });
+
+            }
+
+        });
+
+    });
+
+    container.innerHTML = "";
+
+    if(filtered.length === 0) {
+
+        container.innerHTML =
+            "<p>No matching products found.</p>";
+
+        return;
+    }
+
+    filtered.forEach(product => {
+
+        container.innerHTML +=
+            createProductCard(
+                product.item,
+                product.index,
+                product.category
+            );
+
+    });
+
+  }
+  
+
+
+
+
+/* PRODUCT CARDS */
+
+function createProductCard(item,index,category) {
+
+    const name = item[0];
+
+    const details = item[1];
+
+    const price = item[2];
+
+    let badge = "";
+
+    if(category === "new") {
+        badge = "Brand New";
+    }
+
+    if(category === "used") {
+        badge = "Pre-Owned";
+    }
+
+    if(category === "starlink") {
+        badge = "StarLink";
+    }
+
+    if(category === "accessories") {
+        badge = "Accessory";
+    }
+
+    if(category === "laptops") {
+        badge = "Laptop";
+    }
+
+    let supplierMark = "";
+
+    if(category === "new" && item[3]) {
+        supplierMark =
+            "<p>Supplier marking: " + item[3] + "</p>";
+    }
+
+    const message = encodeURIComponent(
+        "Hello Urban IQ, I am interested in " +
+        name + " - " + details +
+        " priced at K" + price
+    );
+
+    return `
+
+        <div class="card">
+
+            <span class="badge">${badge}</span>
+
+            <h3>${name}</h3>
+
+            <p>${details}</p>
+
+            ${supplierMark}
+
+          <div class="price">
+    K${Number(String(price).replace(/,/g, "")).toLocaleString()}
+</div>
+
+            <button onclick="addToCart('${category}',${index})">
+                Add to Cart +
+            </button>
+
+            <a target="_blank"
+            href="https://wa.me/260974752378?text=${message}">
+                Order Directly
+            </a>
+
+        </div>
+
+    `;
+
+}
+
+
+/* FEATURED PRODUCTS */
+
+function displayFeatured() {
+
+    const container =
+        document.getElementById("featured-products");
+
+    const featured = [
+
+        ["starlink",0],
+
+        ["new",1],
+
+        ["used",0],
+
+        ["laptops",0],
+
+        ["accessories",2]
+
+    ];
+
+    container.innerHTML = "";
+
+    featured.forEach(product => {
+
+        const category = product[0];
+
+        const index = product[1];
+
+        const items = getProducts(category);
+
+        if(items[index]) {
+
+            container.innerHTML +=
+                createProductCard(
+                    items[index],
+                    index,
+                    category
+                );
+
+        }
+
+    });
+
+}
+
+
+/* ADD TO CART */
+
+function addToCart(category,index) {
+
+    const items = getProducts(category);
+
+    const product = items[index];
+
+    if(!product) return;
+
+    const price = Number(
+        String(product[2]).replace(/,/g,"")
+    );
+
+    const existing = cart.find(item =>
+        item.category === category &&
+        item.index === index
+    );
+
+    if(existing) {
+
+        existing.quantity++;
+
+    } else {
+
+        cart.push({
+
+            name: product[0],
+
+            details: product[1],
+
+            price: price,
+
+            category: category,
+
+            index: index,
+
+            quantity: 1
+
+        });
+
+    }
+
+    updateCart();
+
+    alert(product[0] + " added to your cart!");
+
+}
+
+
+/* UPDATE CART */
+
+function updateCart() {
+
+    const container =
+        document.getElementById("cart-items");
+
+    const totalDisplay =
+        document.getElementById("cart-total");
+
+    let total = 0;
+
+    if(cart.length === 0) {
+
+        container.innerHTML =
+            "<p>Your shopping cart is currently empty.</p>";
+
+    } else {
+
+        container.innerHTML = "";
+
+        cart.forEach((item,index) => {
+
+            const subtotal =
+                item.price * item.quantity;
+
+            total += subtotal;
+
+            container.innerHTML += `
+
+                <div class="cart-item">
+
+                    <div>
+
+                        <strong>${item.name}</strong>
+
+                        <p>${item.details}</p>
+
+                        <p>
+                            K${item.price.toLocaleString()}
+                            x ${item.quantity}
+                        </p>
+
+                    </div>
+
+                    <button class="remove-btn"
+                    onclick="removeFromCart(${index})">
+
+                        Remove
+
+                    </button>
+
+                </div>
+
+            `;
+
+        });
+
+    }
+
+    totalDisplay.innerText =
+        "Total: K" + total.toLocaleString();
+
+}
+
+
+/* REMOVE ITEM */
+
+function removeFromCart(index) {
+
+    cart.splice(index,1);
+
+    updateCart();
+
+}
+
+
+/* DELIVERY FIELD */
+
+function toggleDelivery() {
+
+    const option =
+        document.getElementById("deliveryOption").value;
+
+    const town =
+        document.getElementById("deliveryTown");
+
+    town.style.display =
+        option === "Delivery" ? "block" : "none";
+
+}
+
+
+/* WHATSAPP CHECKOUT */
+
+function checkout() {
+
+    if(cart.length === 0) {
+
+        alert("Your shopping cart is empty!");
+
+        return;
+
+    }
+
+    const name =
+        document.getElementById("customerName").value.trim();
+
+    const phone =
+        document.getElementById("customerPhone").value.trim();
+
+    const delivery =
+        document.getElementById("deliveryOption").value;
+
+    const town =
+        document.getElementById("deliveryTown").value.trim();
+
+    if(!name || !phone) {
+
+        alert("Please enter your name and phone number.");
+
+        return;
+
+    }
+
+    if(delivery === "Delivery" && !town) {
+
+        alert("Please enter your delivery destination.");
+
+        return;
+
+    }
+
+    let message =
+        "HELLO URBAN IQ! I WOULD LIKE TO PLACE AN ORDER.\n\n";
+
+    message += "Customer: " + name + "\n";
+
+    message += "Phone: " + phone + "\n";
+
+    message += "Delivery option: " + delivery + "\n";
+
+    if(delivery === "Delivery") {
+
+        message += "Destination: " + town + "\n";
+
+    }
+
+    message += "\nORDER DETAILS:\n\n";
+
+    let total = 0;
+
+    cart.forEach(item => {
+
+        const subtotal =
+            item.price * item.quantity;
+
+        total += subtotal;
+
+        message +=
+            item.name +
+            " (" + item.details + ")" +
+            " x " + item.quantity +
+            " = K" + subtotal.toLocaleString() +
+            "\n";
+
+    });
+
+    message +=
+        "\nPRODUCT TOTAL: K" + total.toLocaleString();
+
+    message +=
+        "\n\nPlease confirm product availability and delivery charges.";
+
+    window.open(
+
+        "https://wa.me/260974752378?text=" +
+        encodeURIComponent(message),
+
+        "_blank"
+
+    );
+
+}
+
+
+/* START WEBSITE */
+
+showProducts("new");
+
+displayFeatured();
+
+updateCart();
+  /* REPAIR SERVICE PRICES */
+
+const repairPrices = {
+
+    screen: {
+        "iPhone 7/8 Plus": 350,
+        "iPhone X": 550,
+        "iPhone XR": 600,
+        "iPhone XS Max": 700,
+        "iPhone 11": 700,
+        "iPhone 11 Pro": 750,
+        "iPhone 11 Pro Max": 950,
+        "iPhone 12": 950,
+        "iPhone 12 Pro": 1100,
+        "iPhone 12 Pro Max": 1400,
+        "iPhone 13": 1400,
+        "iPhone 13 Pro": 1800,
+        "iPhone 13 Pro Max": 2500,
+        "iPhone 14": 1800,
+        "iPhone 14 Pro": 2500,
+        "iPhone 14 Pro Max": 3500,
+        "iPhone 15": 2500,
+        "iPhone 15 Pro": 3500,
+        "iPhone 15 Pro Max": 4500
+    },
+
+    battery: {
+        "iPhone 7/8 Plus": 300,
+        "iPhone X": 450,
+        "iPhone XR": 450,
+        "iPhone XS Max": 550,
+        "iPhone 11": 550,
+        "iPhone 11 Pro": 600,
+        "iPhone 11 Pro Max": 650,
+        "iPhone 12": 650,
+        "iPhone 12 Pro": 750,
+        "iPhone 12 Pro Max": 850,
+        "iPhone 13": 850,
+        "iPhone 13 Pro": 950,
+        "iPhone 13 Pro Max": 1100,
+        "iPhone 14": 1100,
+        "iPhone 14 Pro": 1300,
+        "iPhone 14 Pro Max": 1500,
+        "iPhone 15": 1500,
+        "iPhone 15 Pro": 2000,
+        "iPhone 15 Pro Max": 2500
+    }
+
+};
+
+
+/* UPDATE REPAIR MODELS */
+
+const repairType =
+    document.getElementById("repairType");
+
+const repairModel =
+    document.getElementById("repairModel");
+
+const repairPrice =
+    document.getElementById("repairPrice");
+
+
+repairType.addEventListener("change", function() {
+
+    repairModel.innerHTML =
+        '<option value="">Choose iPhone model</option>';
+
+    repairPrice.innerText =
+        "Select an iPhone model.";
+
+    const models = repairPrices[this.value];
+
+    if (!models) return;
+
+    Object.keys(models).forEach(model => {
+
+        const option = document.createElement("option");
+
+        option.value = model;
+        option.textContent = model;
+
+        repairModel.appendChild(option);
+
+    });
+
+});
+
+
+/* DISPLAY REPAIR PRICE */
+
+repairModel.addEventListener("change", function() {
+
+    const type = repairType.value;
+    const model = this.value;
+
+    if (!type || !model) return;
+
+    const price = repairPrices[type][model];
+
+    repairPrice.innerText =
+        "Price: K" + price.toLocaleString();
+
+});
+
+
+/* REPAIR BOOKING */
+
+document.getElementById("repairBookingForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name =
+        document.getElementById("repairName").value.trim();
+
+    const phone =
+        document.getElementById("repairPhone").value.trim();
+
+    const type =
+        repairType.value;
+
+    const model =
+        repairModel.value;
+
+    const date =
+        document.getElementById("repairDate").value;
+
+    if (!type || !model) {
+        alert("Please select a service and iPhone model.");
+        return;
+    }
+
+    const price = repairPrices[type][model];
+
+    const serviceName =
+        type === "screen"
+        ? "Screen Replacement"
+        : "Battery Replacement";
+
+    const message =
+        "HELLO URBAN IQ! I WOULD LIKE TO REQUEST A REPAIR BOOKING.%0A%0A" +
+        "Name: " + encodeURIComponent(name) +
+        "%0APhone: " + encodeURIComponent(phone) +
+        "%0AService: " + encodeURIComponent(serviceName) +
+        "%0AModel: " + encodeURIComponent(model) +
+        "%0APrice: K" + price.toLocaleString() +
+        "%0AInstallation: FREE" +
+        "%0APreferred Date: " + encodeURIComponent(date);
+
+    const whatsappURL =
+        "https://wa.me/260974752378?text=" + message;
+
+    window.open(whatsappURL, "_blank");
+
+});
+/* BACK TO TOP FUNCTION */
+
+function scrollToTop() {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+window.addEventListener("scroll", function() {
+
+    const button =
+        document.getElementById("backToTop");
+
+    if (window.scrollY > 300) {
+        button.style.display = "block";
+    } else {
+        button.style.display = "none";
+    }
+
+});
+</script>
+  <a href="https://wa.me/260974752378?text=Hello%20Urban%20IQ!"
+   class="floating-whatsapp"
+   target="_blank"
+   rel="noopener">
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+         alt="WhatsApp">
+
+    <span>Chat with us</span>
+  </a>
+<!-- BACK TO TOP BUTTON -->
+
+<button id="backToTop" onclick="scrollToTop()">
+    ↑
+</button>
+</body>
+</html>
